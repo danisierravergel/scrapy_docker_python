@@ -1,0 +1,25 @@
+sudo amazon-linux-extras install docker
+sudo service docker start
+cd ..
+sudo docker build -t website .
+sudo docker run --name website -p 80:80 -d website
+
+sudo docker run --name website -p 443:443 -d website
+
+
+cd py_fut
+sudo docker build -t py_fut .
+sudo docker run -t -i -p 8000:8000 py_fut
+sudo docker run -t -i -p 80:80 py_fut
+
+sudo docker build -t dk_prueba .
+sudo docker run -t -i -p 80:80 dk_prueba
+
+sudo docker container ls -a
+sudo docker rm 2154feae6b0d
+sudo docker rmi 2154feae6b0d
+
+sudo docker build -t prueba .
+sudo docker run -t -i -p 5000:5000 prueba
+
+http://3.80.150.228/
